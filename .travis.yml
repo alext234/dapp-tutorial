@@ -1,0 +1,9 @@
+sudo: required
+language: nix
+
+script:
+  - nix-channel --add https://nix.dapphub.com/pkgs/dapphub
+  - nix-channel --update
+  - nix-env -iA dapphub.{dapp,seth,hevm,evmdis}
+  - make
+  - make test
