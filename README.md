@@ -4,3 +4,22 @@
 Simple project created from dapp.tools
 
 
+The whole project directory is created as follows:
+
+```
+mkdir dapp-tutorial
+dapp init
+```
+
+To build:
+
+```
+make all
+```
+
+
+To run test
+
+```
+make test
+```
