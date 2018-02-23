@@ -4,6 +4,6 @@ language: nix
 before_install:
   - nix-channel --add https://nixos.org/channels/nixos-17.09 nixpkgs
   - nix-channel --update
-  - nix-env -i ShellCheck solc seth nodejs hevm git
+  - nix-env -iA dapphub.{dapp,seth,hevm,evmdis}
   
 script: ./.travis-test
