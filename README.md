@@ -55,7 +55,7 @@ Installation instruction is available at https://dapp.tools/
 
 `dapp` generates empty contract  in `src/DappTutorial.sol`:
 
-```
+```solidity
 pragma solidity ^0.4.19;
 
 contract DappTutorial {
@@ -65,7 +65,7 @@ contract DappTutorial {
 
 together with the unit test in `src/DappTutorial.t.sol`:
 
-```
+```solidity
 pragma solidity ^0.4.19;
 
 import "ds-test/test.sol";
