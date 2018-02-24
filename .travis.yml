@@ -1,9 +1,22 @@
 sudo: required
 language: nix
 
-before_install:
-  - nix-channel --add https://nix.dapphub.com/pkgs/dapphub
-  - nix-channel --update
-  - nix-env -iA dapphub.{dapp,seth,hevm,evmdis}
-  
-script: ./.travis-test
+matrix:
+  include:
+    - language: nix
+      before_script:
+	#  	- nix-channel --add https://nix.dapphub.com/pkgs/dapphub
+	#   - nix-channel --update
+	#   - nix-env -iA dapphub.{dapp,seth,hevm,evmdis}
+      script: ./.travis-test
+      
+    - language: python
+      python:
+        - "3.6"
+      before_script:
+        - sudo apt-get install libssl-dev
+      	- pip install mythril
+      script:
+      	- mythril -x src/DappTutorial.sol
+
+
