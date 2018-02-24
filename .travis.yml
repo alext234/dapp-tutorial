@@ -1,12 +1,15 @@
 sudo: required
-
-matrix:
-  include:
-    - language: python
-      python:
-        - 3.6
-      before_script:
-        - sudo apt-get install libssl-dev
-        - pip install mythril
-      script:
-      	- mythril -x src/DappTutorial.sol
+dist: trusty
+language: python
+python:
+  - "3.6"
+before_script:
+  - sudo apt-get install libssl-dev
+  - pip install mythril
+  - curl https://nixos.org/nix/install | sh
+  - nix-channel --add https://nix.dapphub.com/pkgs/dapphub
+  - nix-channel --update
+  - nix-env -iA dapphub.{dapp,seth,hevm,evmdis}
+script:
+  - ./.travis-test
+  - mythril -x src/DappTutorial.sol
