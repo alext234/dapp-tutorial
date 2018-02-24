@@ -1,9 +1,8 @@
-dist: trusty
 sudo: required
 
 matrix:
   include:
-    - language: python
+	- language: python
       python:
         - "3.6"
       before_script:
@@ -11,5 +10,3 @@ matrix:
       	- pip install mythril
       script:
       	- mythril -x src/DappTutorial.sol
-
-
