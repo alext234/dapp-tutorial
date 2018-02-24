@@ -96,3 +96,25 @@ Unit testing doc is available here https://github.com/dapphub/dapp/blob/master/d
   before each test case.
 - Functions with the `test` prefix are evaluated for correctness.
 - Functions with the `testFail` prefix are considered correct if they throw an exception.
+
+
+# Analysis with `mythril`
+
+`mythril` provides security analysis of Ethereum smart contract. Installation instruction can be found 
+at this page https://github.com/ConsenSys/mythril  (note that openssl library is required):
+
+```
+(activate python3 virtualenv)
+
+sudo apt-get install libssl-dev
+
+pip install mythril
+
+```
+
+ 
+As an example, to run `mythril` with `DappTutorial.sol`:
+
+```
+myth -v 2 -x src/DappTutorial.sol
+```
