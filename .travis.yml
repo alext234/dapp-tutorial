@@ -2,11 +2,11 @@ sudo: required
 
 matrix:
   include:
-	- language: python
+    - language: python
       python:
-        - "3.6"
+        - 3.6
       before_script:
         - sudo apt-get install libssl-dev
-      	- pip install mythril
+        - pip install mythril
       script:
       	- mythril -x src/DappTutorial.sol
