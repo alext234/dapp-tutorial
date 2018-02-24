@@ -3,9 +3,6 @@ sudo: required
 
 matrix:
   include:
-    - language: nix
-      script: ./.travis-test
-      
     - language: python
       python:
         - "3.6"
