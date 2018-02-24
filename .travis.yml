@@ -7,6 +7,7 @@ before_script:
 #  - sudo apt-get install libssl-dev
 #  - pip install mythril
   - curl https://nixos.org/nix/install | sh
+  - . ~/.nix-profile/etc/profile.d/nix.sh
   - nix-channel --add https://nix.dapphub.com/pkgs/dapphub
   - nix-channel --update
   - nix-env -iA dapphub.{dapp,seth,hevm,evmdis}
