@@ -4,10 +4,6 @@ sudo: required
 matrix:
   include:
     - language: nix
-      before_script:
-	#  	- nix-channel --add https://nix.dapphub.com/pkgs/dapphub
-	#   - nix-channel --update
-	#   - nix-env -iA dapphub.{dapp,seth,hevm,evmdis}
       script: ./.travis-test
       
     - language: python
