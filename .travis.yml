@@ -11,7 +11,7 @@ before_script:
 #  - nix-channel --add https://nix.dapphub.com/pkgs/dapphub
 #  - nix-channel --update
 #  - nix-env -iA dapphub.{dapp,seth,hevm,evmdis}
-  - git clone --recursive https://github.com/dapphub/nixpkgs-overlay dapphub
+  - git clone --recursive https://github.com/dapphub/nixpkgs-dapphub.git dapphub
   - nix-env -f ./dapphub -iA dapp hevm seth
 script:
   - ./.travis-test
